@@ -3,7 +3,7 @@ include '../layout/header.php';
 include '../layout/menu.php';
 include '../layout/navbar.php';
 include '../config.php';
-$sql = "SELECT * from distributor";
+$sql = "SELECT * from buku";
 
 
 $hasil = $koneksi->query($sql);
@@ -29,14 +29,22 @@ $hasil = $koneksi->query($sql);
                     </div>
                 </div>
             </div>
-    <a href="tabel.php" class="btn btn-primary">Tambah Distributor</a>
+    <a href="tabel.php" class="btn btn-primary">Tambah Buku</a>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nama Distributor</th>
-                <th scope="col">Alamat</th>
-                <th scope="col">Telepon</th>
+                <th scope="col">Id_buku</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Noisbn</th>
+                <th scope="col">Penulis</th>
+                <th scope="col">Penerbit</th>
+                <th scope="col">Tahun</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Harga_pokok</th>
+                <th scope="col">Harga_jual</th>
+                <th scope="col">Ppn</th>
+                <th scope="col">Diskon</th>
             </tr>
         </thead>
         <tbody>
@@ -49,13 +57,37 @@ $hasil = $koneksi->query($sql);
                         <?= $nomer ?>
                     </th>
                     <td>
-                        <?= $item['nama_distributor'] ?>
+                        <?= $item['id_buku'] ?>
                     </td>
                     <td>
-                        <?= $item['alamat'] ?>
+                        <?= $item['judul'] ?>
                     </td>
                     <td>
-                        <?= $item['telepon'] ?>
+                        <?= $item['noisbn'] ?>
+                    </td>
+                    <td>
+                        <?= $item['penulis'] ?>
+                    </td>
+                    <td>
+                        <?= $item['penerbit'] ?>
+                    </td>
+                    <td>
+                        <?= $item['tahun'] ?>
+                    </td>
+                    <td>
+                        <?= $item['stok'] ?>
+                    </td>
+                    <td>
+                        <?= $item['harga_pokok'] ?>
+                    </td>
+                    <td>
+                        <?= $item['harga_jual'] ?>
+                    </td>
+                    <td>
+                        <?= $item['ppn'] ?>
+                    </td>
+                    <td>
+                        <?= $item['diskon'] ?>
                     </td>
                     
                 <td>

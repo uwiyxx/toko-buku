@@ -3,7 +3,7 @@ include '../layout/header.php';
 include '../layout/menu.php';
 include '../layout/navbar.php';
 include '../config.php';
-$sql = "SELECT * from distributor";
+$sql = "SELECT * from pasok";
 
 
 $hasil = $koneksi->query($sql);
@@ -29,14 +29,16 @@ $hasil = $koneksi->query($sql);
                     </div>
                 </div>
             </div>
-    <a href="tabel.php" class="btn btn-primary">Tambah Distributor</a>
+    <a href="tabel.php" class="btn btn-primary">Tambah Pasok</a>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nama Distributor</th>
-                <th scope="col">Alamat</th>
-                <th scope="col">Telepon</th>
+                <th scope="col">Id_pasok</th>
+                <th scope="col">Id_distributor</th>
+                <th scope="col">Id_buku</th>
+                <th scope="col">Jumlah</th>
+                <th scope="col">Tanggal</th>
             </tr>
         </thead>
         <tbody>
@@ -49,13 +51,19 @@ $hasil = $koneksi->query($sql);
                         <?= $nomer ?>
                     </th>
                     <td>
-                        <?= $item['nama_distributor'] ?>
+                        <?= $item['id_pasok'] ?>
                     </td>
                     <td>
-                        <?= $item['alamat'] ?>
+                        <?= $item['id_distributor'] ?>
                     </td>
                     <td>
-                        <?= $item['telepon'] ?>
+                        <?= $item['id_buku'] ?>
+                    </td>
+                    <td>
+                        <?= $item['jumlah'] ?>
+                    </td>
+                    <td>
+                        <?= $item['tanggal'] ?>
                     </td>
                     
                 <td>
